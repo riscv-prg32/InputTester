@@ -4,7 +4,7 @@
   "title": "Input Tester",
   "version": "1.0.0",
   "summary": "Cartridge for testing input and audio functionalities.",
-  "description": "Input Tester is an educational PRG32 cartridge for testing device inputs. It visually registers button presses on a simulated controller interface, including multi-key combinations and highlighting active buttons.",
+  "description": "Input Tester is an educational PRG32 cartridge for testing device inputs and audio. It visually registers button presses on a simulated controller interface, including multi-key combinations and highlighting active buttons.",
   "authors": [
     {
       "name": "Simone Boscaglia",
