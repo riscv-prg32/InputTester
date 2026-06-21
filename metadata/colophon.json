@@ -1,0 +1,24 @@
+{
+  "abi": "prg32-colophon-1.0",
+  "title": "Input Tester",
+  "subtitle": "Cartridge for testing input and audio functionalities",
+  "version": "1.0.0",
+  "release_date": "2026-06-21",
+  "developer": {
+    "name": "UniParthenope PRG32",
+    "url": "https://github.com/riscv-prg32/InputTester"
+  },
+  "authors": [
+    {
+      "role": "student",
+      "name": "Simone Boscaglia - UniParthenope"
+    }
+  ],
+  "license": "MIT",
+  "copyright": "Copyright 2026 UniParthenope PRG32 contributors",
+  "acknowledgements": [
+    "Clean-room code for PRG32 teaching."
+  ],
+  "controls": [],
+  "start_prompt": "Press buttons to test input and audio functionalities."
+}

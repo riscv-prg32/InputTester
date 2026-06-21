@@ -1,0 +1,24 @@
+{
+  "abi": "prg32-metadata-1.0",
+  "id": "org.uniparthenope.prg32.inputtester",
+  "title": "Input Tester",
+  "version": "1.0.0",
+  "summary": "Cartridge for testing input and audio functionalities.",
+  "tags": [
+    "utility",
+    "test",
+    "input",
+    "riscv",
+    "prg32"
+  ],
+  "assets": {
+    "icon": "icon.png",
+    "splash": "screenshot.png"
+  },
+  "architectures": [
+    {
+      "id": "portable",
+      "file": "inputtester.prg32"
+    }
+  ]
+}
