@@ -12,13 +12,16 @@
     "prg32"
   ],
   "assets": {
-    "icon": "icon.png",
-    "splash": "screenshot.png"
+    "icon": "icon.png"
   },
   "architectures": [
     {
-      "id": "portable",
-      "file": "inputtester.prg32"
+      "id": "qemu",
+      "file": "inputtester_qemu.prg32"
+    },
+    {
+      "id": "esp32c6",
+      "file": "inputtester_esp32c6.prg32"
     }
   ]
 }
