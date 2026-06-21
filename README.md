@@ -1,6 +1,6 @@
 # PRG32 Input Tester
 
-PRG32 Input Tester is an original utility cartridge designed to verify hardware input functionality, screen drawing, and polyphonic audio capabilities on PRG32 devices. It provides immediate visual and auditory feedback for all standard controller buttons, making it an ideal diagnostic tool for testing newly assembled hardware or custom controllers.
+PRG32 Input Tester is an original utility cartridge designed to verify hardware input functionality, screen drawing, and audio capabilities on PRG32 devices. It provides immediate visual and auditory feedback for all standard controller buttons, making it an ideal diagnostic tool for testing newly assembled hardware or custom controllers.
 
 The project follows the PRG32 cartridge convention: the C source exports `input_tester_init`, `input_tester_update`, and `input_tester_draw`, matching the build conventions used by PRG32 cartridges.
 
