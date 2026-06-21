@@ -11,19 +11,11 @@ The project follows the PRG32 cartridge convention: the C source exports `input_
 - **System Buttons**: Start button.
 - **Visual Feedback**: Buttons illuminate with a yellow highlight and inverted text when pressed.
 - **Multi-key Registration**: Detects and displays a "Multiple keys registered" flag when more than one button is pressed simultaneously. This is useful for diagnosing key ghosting or hardware matrix issues.
-- **Harmonized Audio**: Each button triggers a specific musical note. When multiple buttons are pressed simultaneously, the PRG32 audio API stacks the sounds into a harmonized chord.
-  - **Left**: Low C
-  - **Right**: Low E
-  - **Up**: Low G
-  - **Down**: Middle C
-  - **A**: Middle E
-  - **B**: Middle G
-  - **Start**: High C
 - **Audio Status Indicator**: Displays "Audio is being played" dynamically at the bottom of the screen when any button is held down and sound is active.
 
 ## Capabilities exercised
 
-PRG32 Input Tester deliberately stresses PRG32 subsystems: text rendering, colored rectangle drawing (UI highlights), edge-detection logic for inputs, bitwise masking, multi-button state tracking, audio system initialization, and concurrent multi-channel note sequence generation for dynamic chords.
+PRG32 Input Tester deliberately stresses PRG32 subsystems: text rendering, colored rectangle drawing (UI highlights), edge-detection logic for inputs, bitwise masking, multi-button state tracking, audio system initialization and playing sound effects.
 
 ## License
 
