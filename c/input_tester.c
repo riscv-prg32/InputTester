@@ -1,4 +1,5 @@
 #include "prg32.h"
+#include <stdint.h>
 
 static uint32_t current_input = 0;
 static int needs_redraw =
@@ -12,11 +13,7 @@ static void draw_button(int is_pressed, int x, int y, const char *str);
 /* ---------------------------------------------------------
  * INIT
  * --------------------------------------------------------- */
-void input_tester_init(void) {
-  if (prg32_audio_init(NULL)) {
-    prg32_audio_set_master_volume(180);
-  }
-}
+void input_tester_init(void) {}
 
 /* ---------------------------------------------------------
  * UPDATE
@@ -29,21 +26,56 @@ void input_tester_update(void) {
   }
 
   uint32_t pressed = new_input & ~current_input;
+  uint32_t released = ~new_input & current_input;
 
-  if (pressed & PRG32_BTN_LEFT)
-    prg32_audio_note(36, 135); /* Low C */
-  if (pressed & PRG32_BTN_RIGHT)
-    prg32_audio_note(40, 135); /* Low E */
-  if (pressed & PRG32_BTN_UP)
-    prg32_audio_note(43, 135); /* Low G */
-  if (pressed & PRG32_BTN_DOWN)
-    prg32_audio_note(48, 135); /* Middle C */
-  if (pressed & PRG32_BTN_A)
-    prg32_audio_note(52, 135); /* Middle E */
-  if (pressed & PRG32_BTN_B)
-    prg32_audio_note(55, 135); /* Middle G */
-  if (pressed & PRG32_BTN_START)
-    prg32_audio_note(60, 135); /* High C */
+  /* Low C */
+  if (pressed & PRG32_BTN_LEFT) {
+    prg32_audio_note_on(0, PRG32_DEFAULT_INSTRUMENT_ID, 36, 255);
+  } else if (released & PRG32_BTN_LEFT) {
+    prg32_audio_note_off(0);
+  }
+
+  // Low E
+  if (pressed & PRG32_BTN_RIGHT) {
+    prg32_audio_note_on(0, PRG32_DEFAULT_INSTRUMENT_ID, 40, 255);
+  } else if (released & PRG32_BTN_RIGHT) {
+    prg32_audio_note_off(0);
+  }
+
+  // Low G
+  if (pressed & PRG32_BTN_UP) {
+    prg32_audio_note_on(1, PRG32_DEFAULT_INSTRUMENT_ID, 43, 255);
+  } else if (released & PRG32_BTN_UP) {
+    prg32_audio_note_off(1);
+  }
+
+  /* Middle C */
+  if (pressed & PRG32_BTN_DOWN) {
+    prg32_audio_note_on(1, PRG32_DEFAULT_INSTRUMENT_ID, 48, 255);
+  } else if (released & PRG32_BTN_DOWN) {
+    prg32_audio_note_off(1);
+  }
+
+  /* Middle E */
+  if (pressed & PRG32_BTN_A) {
+    prg32_audio_note_on(2, PRG32_DEFAULT_INSTRUMENT_ID, 52, 255);
+  } else if (released & PRG32_BTN_A) {
+    prg32_audio_note_off(2);
+  }
+
+  /* Middle G */
+  if (pressed & PRG32_BTN_B) {
+    prg32_audio_note_on(3, PRG32_DEFAULT_INSTRUMENT_ID, 55, 255);
+  } else if (released & PRG32_BTN_B) {
+    prg32_audio_note_off(3);
+  }
+
+  /* High C  */
+  if (pressed & PRG32_BTN_START) {
+    prg32_audio_note_on(4, PRG32_DEFAULT_INSTRUMENT_ID, 60, 255);
+  } else if (released & PRG32_BTN_START) {
+    prg32_audio_note_off(4);
+  }
 
   /* If we made it here, input changed. Save it and flag a redraw. */
   current_input = new_input;
