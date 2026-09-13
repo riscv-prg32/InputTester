@@ -4,6 +4,10 @@ PRG32 Input Tester is an original utility cartridge designed to verify hardware 
 
 The project follows the PRG32 cartridge convention: the C source exports `input_tester_init`, `input_tester_update`, and `input_tester_draw`, matching the build conventions used by PRG32 cartridges.
 
+Build portable `esp32c6` and `qemu` cartridges with `scripts/build.sh`, then
+create a CartridgeStore bundle with `scripts/pack-store-bundle.sh`. See the
+[build guide](docs/build.md) for commands and prerequisites.
+
 ## Features
 
 - **D-pad Testing**: Left, Right, Up, and Down directional inputs.
